@@ -4,8 +4,6 @@ var DELETE 	 = 'DELETE'
 var UPDATE 	 = 'UPDATE'
 var READ 	 = 'READ'
 
-//TEST
-	//test 2
 var URL_CREATE 	 = 'http://localhost/CRUD_SP_CI/index.php/user/create_user'
 var URL_READ_ALL = 'http://localhost/CRUD_SP_CI/index.php/user/get_user'
 var URL_DELETE 	 = 'http://localhost/CRUD_SP_CI/index.php/user/delete_user'
