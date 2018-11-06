@@ -12,31 +12,35 @@ class User_model extends CI_Model
     public function get_user($id = '')
     {
         if ($id === '') {
-            //$query = $this->db->query('SELECT id, name, email FROM user');
-            $query = $this->db->query('CALL sp_get_user');
-            //$this->db->call_function('sp_get_user');
+            $query = $this->db->query('CALL usp_user_get');
             
         } else {
-            $query = $this->db->query("SELECT id, name, email FROM user WHERE id='" . $id . "'");
+                $sql = 'CALL usp_user_getbyid(?)';
+                $query = $this->db->query($sql,array($id));
         }
         return $query->result_array();
 
-        // $query = $this->db->get_where('news', array('slug' => $slug));
-        // return $query->row_array();
     }
 
     public function create_user($name, $email)
     {
-        return $this->db->query("insert into user (name,email) values ('" . $name . "','" . $email . "')");
+        $sql = 'CALL usp_user_add(?,?)';
+        return $this->db->query($sql,array($name,$email));        
     }
 
     public function delete_user($id)
     {
-        return $this->db->query("delete from user where id ='" . $id . "'");
+           $sql = 'CALL usp_user_delete(?)';
+           return $this->db->query($sql,array($id)); 
     }
     
     public function update_user($id, $name, $email)
     {
-        return $this->db->query("UPDATE user SET name='" . $name . "', email='" . $email . "'  WHERE id='" . $id . "'");
+//         return $this->db->query("UPDATE user SET name='" . $name . "', email='" . $email . "'  WHERE id='" . $id . "'");
+//         call usp_user_update('27','cokero','cokero@gmail.com');
+        
+        $sql = 'CALL usp_user_update(?,?,?)';
+        return $this->db->query($sql,array($id,$name,$email)); 
+        
     }
 }

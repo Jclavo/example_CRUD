@@ -19,10 +19,9 @@
 
 						<!-- Text input-->
 						<div class="form-group">
-							<label class="col-md-4 control-label" for="user-id">Id</label>
 							<div class="col-md-4">
-								<input id="user-id" name="user-id" type="text"
-									placeholder="Id autogenerate" class="form-control input-md">
+								<input id="user-id" name="user-id" type="hidden"
+									placeholder="" class="form-control input-md"  disabled>
 							</div>
 						</div>
 						
