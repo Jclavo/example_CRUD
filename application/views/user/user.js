@@ -4,10 +4,10 @@ var DELETE 	 = 'DELETE'
 var UPDATE 	 = 'UPDATE'
 var READ 	 = 'READ'
 
-var URL_CREATE 	 = 'http://localhost/CRUD_SP_CI/index.php/user/create_user'
-var URL_READ_ALL = 'http://localhost/CRUD_SP_CI/index.php/user/get_user'
-var URL_DELETE 	 = 'http://localhost/CRUD_SP_CI/index.php/user/delete_user'
-var URL_UPDATE 	 = 'http://localhost/CRUD_SP_CI/index.php/user/update_user'
+var URL_CREATE 	 = 'http://localhost/CRUD_SP/index.php/user/create_user'
+var URL_READ_ALL = 'http://localhost/CRUD_SP/index.php/user/get_user'
+var URL_DELETE 	 = 'http://localhost/CRUD_SP/index.php/user/delete_user'
+var URL_UPDATE 	 = 'http://localhost/CRUD_SP/index.php/user/update_user'
 		
 var global_user = {
 		id : '',
