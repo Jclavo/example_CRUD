@@ -1,4 +1,5 @@
 <?php
+
 class User_model extends CI_Model
 {
 
@@ -35,6 +36,8 @@ class User_model extends CI_Model
     
     public function update_user($id, $name, $email)
     {
+//         return $this->db->query("UPDATE user SET name='" . $name . "', email='" . $email . "'  WHERE id='" . $id . "'");
+//         call usp_user_update('27','cokero','cokero@gmail.com');
         
         $sql = 'CALL usp_user_update(?,?,?)';
         return $this->db->query($sql,array($id,$name,$email)); 
